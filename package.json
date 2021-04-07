@@ -1,0 +1,25 @@
+{
+    "name": "nf-sdk",
+    "version": "1.1.0",
+    "description": "NetForce SDK JS",
+    "keywords": [
+        "netforce",
+        "api",
+        "js",
+        "sdk"
+    ],
+    "contributors": [
+        "Bruno Gonçalves",
+        "Tiago Gonçalves"
+    ],
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:netforceti/sdk-js.git"
+    },
+    "main": "src/index.js",
+    "dependencies": {
+        "axios": "^0.21.1",
+        "rhinojs": "^1.8.1"
+    }
+}
