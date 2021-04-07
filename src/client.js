@@ -1,7 +1,7 @@
-const arr = require("rhinojs/support/arr");
 const axios = require('axios');
 const Config = require('./config');
 const Global = require('./global');
+const arr = require("rhinojs/support/arr");
 
 class Client {
     /**
@@ -29,6 +29,9 @@ class Client {
 
         // Copiar env informado no opts para os parametros
         this.setParam('env', this.options.env);
+
+        // Montar headers default
+        this.headersDefault = {};
     }
 
     /**
@@ -105,7 +108,7 @@ class Client {
             'Accept'        : 'application/json',
             'Cache-Control' : 'no-cache'
         };
-        Object.assign(hdrs, headers);
+        Object.assign(hdrs, this.headersDefault, headers);
 
         var req = {
             method: method,
