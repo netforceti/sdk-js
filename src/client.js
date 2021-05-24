@@ -10,7 +10,7 @@ class Client {
     constructor(opts = {}) {
         this.client = this; // Alias to this.
 
-        this.version = '1.1.0';
+        this.version = '1.1.3';
         this.params = {};
         this.options = {
             env: Config.envProduction,
@@ -31,7 +31,7 @@ class Client {
         this.setParam('env', this.options.env);
 
         // Montar headers default
-        this.headersDefault = {};
+        this.headersDefault = this.option('headers', {});
     }
 
     /**
@@ -226,6 +226,16 @@ class Client {
      */
     setSessaoId(id) {
         return this.setParam('sessao_id', id);
+    }
+
+    /**
+     * Alias: para atribuir o defaultHeaders.
+     * 
+     * @param {arraystring} headers Lista de headers
+     * @returns {Client}
+     */
+    setDefaultHeaders(headers) {
+        return this.headersDefault = headers;
     }
 
     /**
