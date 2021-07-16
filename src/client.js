@@ -269,9 +269,10 @@ class Client {
      * Retorna a URL para acao.
      * 
      * @param {String} part Parte da URL
+     * @param {Boolean} inlcudeToken Se deve adicionar o access_token na url
      * @returns {String}
      */
-    getUrl(part) {
+    getUrl(part, inlcudeToken = false) {
         var env = this.param('env', Config.envProduction);
         if (typeof Config.endpoints[env] != 'string') {
             throw new Error("ENV [" + env + "] nao configurado");
@@ -280,7 +281,13 @@ class Client {
         var base = Config.endpoints[env];
         part = part.trim();
 
-        return (part != '') ? base + '/' + part : base;
+        var url = (part != '') ? base + '/' + part : base;
+
+        if (inlcudeToken) {
+            url += '?access_token=' + this.getAccessToken();
+        }
+
+        return url;
     }
 
     /**
