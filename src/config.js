@@ -10,8 +10,8 @@ module.exports = {
      * Endpoints
      */
     endpoints: {
-        production : 'https://api.netforcews.com',
-        sandbox    : 'https://api.sandbox.netforcews.com',
+        production : 'https://api.netforce.com.br',
+        sandbox    : 'https://api.sandbox.netforce.com.br',
         local      : 'http://localhost:8090',
     }
 };

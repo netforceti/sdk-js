@@ -1,6 +1,6 @@
 {
     "name": "nf-sdk",
-    "version": "1.1.4",
+    "version": "1.2.0",
     "description": "NetForce SDK JS",
     "keywords": [
         "netforce",
@@ -19,7 +19,7 @@
     },
     "main": "src/index.js",
     "dependencies": {
-        "axios": "^0.21.1",
-        "rhinojs": "^1.8.1"
+        "axios": "^0.27.2",
+        "rhinojs": "^1.8.17"
     }
 }
